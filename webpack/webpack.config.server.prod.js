@@ -1,8 +1,8 @@
-var webpack = require('webpack');
-var config = require('./webpack.config.server');
-var _ = require('lodash');
+let webpack = require('webpack');
+let _ = require('lodash');
+let config = require('./webpack.config.server');
 
-var config = module.exports = _.assign(_.cloneDeep(config), {
+config = module.exports = _.assign(_.cloneDeep(config), {
   plugins: (config.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {

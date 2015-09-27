@@ -22,5 +22,9 @@ random
 ejson
 spacebars
 check
+twbs:bootstrap
 kadira:flow-router
 kadira:react-layout
+useraccounts:bootstrap
+useraccounts:flow-routing
+meteortoys:allthings

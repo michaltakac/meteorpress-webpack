@@ -1,11 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
+let path = require('path');
+let webpack = require('webpack');
 
 module.exports = {
   entry: [
     './lib/core-js-no-number',
     'regenerator/runtime',
-    '../app/main_client',
+    '../meteorpress-core/client/index',
   ],
   output: {
     path: path.join(__dirname, 'assets'),
@@ -15,7 +15,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
-      app: path.join(__dirname, '../app'),
+      app: path.join(__dirname, '../meteorpress-core'),
     },
   },
   module: {
@@ -29,10 +29,14 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
     ],
   },
   plugins: [
-    new webpack.PrefetchPlugin("react"),
-    new webpack.PrefetchPlugin("react/lib/ReactComponentBrowserEnvironment")
+    new webpack.PrefetchPlugin('react'),
+    new webpack.PrefetchPlugin('react/lib/ReactComponentBrowserEnvironment')
   ]
 };
