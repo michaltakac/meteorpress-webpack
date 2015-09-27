@@ -1,9 +1,9 @@
-let webpack = require('webpack');
-let config = require('./webpack.config.client');
-let _ = require('lodash');
-let devProps = require('./devProps');
+var webpack = require('webpack');
+var config = require('./webpack.config.client');
+var _ = require('lodash');
+var devProps = require('./devProps');
 
-config = module.exports = _.assign(_.cloneDeep(config), {
+var config = module.exports = _.assign(_.cloneDeep(config), {
   // http://webpack.github.io/docs/build-performance.html#sourcemaps
   devtool: 'eval',             // fastest - readable source maps
   // devtool: 'source-map',       // slowest - best source maps
